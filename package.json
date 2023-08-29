@@ -1,0 +1,20 @@
+{
+  "name": "talk-a-tive",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon backend/server.js"
+  },
+  "author": "Diwakaran Agrawal",
+  "license": "ISC",
+  "dependencies": {
+    "colors": "^1.4.0",
+    "dot": "^1.1.3",
+    "dotenv": "^16.3.1",
+    "env": "^0.0.2",
+    "express": "^4.18.2",
+    "mongoose": "^7.4.5",
+    "nodemon": "^3.0.1"
+  }
+}
