@@ -3,24 +3,19 @@ const dotenv = require("dotenv");
 const { chats } = require("./data");
 const connectDB = require("./config/db");
 const colors = require("colors");
+const userRoutes = require("./routes/userRoutes");
 
 dotenv.config();
 const app = express();
 connectDB();
 
+app.use(express.json());    //to accept json data
+
 app.get("/", (req, res) => {
     res.send("API is Running Successfully Mate");
 });
 
-app.get("/api/chats", (req, res) => {
-    res.send(chats);
-});
-
-app.get("/api/chats/:id", (req, res) => {
-    // console.log(req.params.id);
-    const singleChat = chats.find(c => c._id === req.params.id);
-    res.send(singleChat);
-});
+app.use('/api/user',userRoutes)
 
 const PORT = process.env.PORT || 6900
 
