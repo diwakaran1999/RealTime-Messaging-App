@@ -4,6 +4,7 @@ const { chats } = require("./data");
 const connectDB = require("./config/db");
 const colors = require("colors");
 const userRoutes = require("./routes/userRoutes");
+const { notFound, errorHandler } = require("./middleware/errorMiddleWare");
 
 dotenv.config();
 const app = express();
@@ -15,7 +16,10 @@ app.get("/", (req, res) => {
     res.send("API is Running Successfully Mate");
 });
 
-app.use('/api/user',userRoutes)
+app.use('/api/user', userRoutes);
+
+app.use(notFound)
+app.use(errorHandler)
 
 const PORT = process.env.PORT || 6900
 
