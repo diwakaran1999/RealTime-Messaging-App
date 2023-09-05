@@ -60,6 +60,8 @@ const authUser = expressAsyncHandler(async (req, res) => {
 });
 
 //  /api/user?search=dev
+/* "email":"dev@gmail.com",
+    "password":"1234321" */
 const allUsers = expressAsyncHandler(async (req, res) => {
     const keyword = req.query.search
         ? {
