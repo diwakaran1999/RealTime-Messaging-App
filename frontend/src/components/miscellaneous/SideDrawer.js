@@ -28,7 +28,7 @@ const SideDrawer = () => {
           placement='bottom-end'>
           <Button variant="ghost">
           <i class="fas fa-search"></i>
-          <Text d={{base:"none",md:"flex"}} px='4'>Search User</Text>
+          <Text display={{base:"none",md:"flex"}} px='4'>Search User</Text>
         </Button>
         </Tooltip>
 
