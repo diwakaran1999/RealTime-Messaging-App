@@ -10,7 +10,7 @@ import { Avatar } from "@chakra-ui/avatar";
 import { ChatState } from '../../Context/ChatProvider';
 import ProfileModal from './ProfileModal';
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
-import { Drawer, DrawerBody, DrawerContent, DrawerHeader, DrawerOverlay, Input, useDisclosure, useToast} from '@chakra-ui/react';
+import { Drawer, DrawerBody, DrawerContent, DrawerHeader, DrawerOverlay, Input, Spinner, useDisclosure, useToast} from '@chakra-ui/react';
 import ChatLoading from '../ChatLoading';
 import UserListItem from '../UserAvatar/UserListItem';
 
@@ -79,6 +79,8 @@ const SideDrawer = () => {
       };
 
       const { data } = await axios.post("/api/chat", { userId }, config);
+
+      if (!chats.find((c) => c._id === data._id)) setChats([data, ...chats]);
 
       setSelectedChat(data);
       setLoadingChat(false);
@@ -168,6 +170,7 @@ const SideDrawer = () => {
                 ))
               )
             }
+            {loadingChat && <Spinner ml="auto" d="flex"/>}
         </DrawerBody>
         </DrawerContent>
       </Drawer>
