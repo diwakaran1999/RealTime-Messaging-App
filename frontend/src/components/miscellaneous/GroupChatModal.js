@@ -47,6 +47,7 @@ const GroupChatModal = ({children}) => {
             });
         }
     };
+    
     const handleSubmit = async () => {
         if (!groupChatName || !selectedUsers) {
             toast({
