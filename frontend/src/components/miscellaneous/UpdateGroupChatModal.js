@@ -59,11 +59,11 @@ const UpdateGroupChatModal = ({fetchAgain, setFetchAgain, fetchMessages}) => {
 
       setSelectedChat(data);
       setFetchAgain(!fetchAgain);
-      fetchMessages();
+      // fetchMessages();
       setLoading(false);
     } catch (error) {
       toast({
-        title: "Error Occured",
+        title: "Error Occured!",
         description: error.response.data.message,
         status: "error",
         duration: 5000,
@@ -72,6 +72,7 @@ const UpdateGroupChatModal = ({fetchAgain, setFetchAgain, fetchMessages}) => {
       });
       setLoading(false);
     }
+    setGroupChatName("");
    };
   
   const handleRemove = async (user1) => {
