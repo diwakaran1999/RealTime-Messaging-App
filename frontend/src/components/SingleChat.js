@@ -10,7 +10,7 @@ import "./styles.css";
 import ScrollableChat from './ScrollableChat';
 import io from "socket.io-client";
 import animationData from "../animations/typing.json";
-import Lottie from "lottie-react"; 
+import Lottie from "react-lottie"; 
 
 const ENDPOINT = "http://localhost:6900";
 var socket, selectedChatCompare;
@@ -221,25 +221,25 @@ const SingleChat = ({ fetchAgain, setFetchAgain }) => {
                 isRequired
                 mt={3}
             >
-              {istyping ? (
-                <div>
-                  <Lottie
-                    options={defaultOptions}
-                    // height={50}
-                    width={70}
-                    style={{ marginBottom: 15, marginLeft: 0 }}
-                  />
-                </div>
-              ) : (
-                <></>
-              )}
-              <Input
-                variant="filled"
-                bg="#E0E0E0"
-                placeholder="Enter a message.."
-                value={newMessage}
-                onChange={typingHandler}
-              />
+                {istyping ? (
+                    <div>
+                    <Lottie
+                        options={defaultOptions}
+                        // height={50}
+                        width={70}
+                        style={{ marginBottom: 15, marginLeft: 0 }}
+                    />
+                    </div>
+                ) : (
+                    <></>
+                )}
+                <Input
+                    variant="filled"
+                    bg="#E0E0E0"
+                    placeholder="Enter a message.."
+                    value={newMessage}
+                    onChange={typingHandler}
+                />
             </FormControl>
                     </Box>
                 </>
