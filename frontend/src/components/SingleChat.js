@@ -10,7 +10,7 @@ import "./styles.css";
 import ScrollableChat from './ScrollableChat';
 import io from "socket.io-client";
 import animationData from "../animations/typeanimation.json";
-import Lottie from "react-lottie"; 
+// import Lottie from "react-lottie"; 
 
 const ENDPOINT = "http://localhost:6900";
 var socket, selectedChatCompare;
